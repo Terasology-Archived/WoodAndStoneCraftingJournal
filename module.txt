@@ -1,0 +1,22 @@
+{
+    "id" : "WoodAndStoneCraftingJournal",
+    "version" : "0.1.0-SNAPSHOT",
+    "author" : "",
+    "displayName" : "WoodAndStoneCraftingJournal",
+    "description" : "",
+    "dependencies" : [
+        {
+            "id": "Journal",
+            "minVersion": "0.1.0"
+        },
+        {
+            "id": "WoodCrafting",
+            "minVersion": "1.0.0"
+        },
+         {
+            "id": "StoneCrafting",
+            "minVersion": "1.0.0"
+        }
+    ],
+    "serverSideOnly" : false
+}
