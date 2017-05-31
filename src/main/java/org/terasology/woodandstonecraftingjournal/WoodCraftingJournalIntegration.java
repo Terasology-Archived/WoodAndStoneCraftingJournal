@@ -218,16 +218,17 @@ public class WoodCraftingJournalIntegration extends BaseComponentSystem {
                                       CraftingStationComponent craftingStationComponent) {
         EntityRef character = craftingStationFormed.getInstigator();
         String workstationType = craftingStationComponent.type;
-        if (workstationType.equalsIgnoreCase("WoodCrafting:BasicWoodCrafting")) {
+        if (workstationType.equalsIgnoreCase("WoodCrafting:BasicWoodCraftingStation")) {
             character.send(new DiscoveredNewJournalEntry(wasChapterId, "WoodCraftingStation"));
-        } else if (workstationType.equalsIgnoreCase("WoodCrafting:BasicStoneCrafting")) {
+        } else if (workstationType.equalsIgnoreCase("StoneCrafting:BasicStoneCraftingStation")) {
             character.send(new DiscoveredNewJournalEntry(wasChapterId, "StoneCraftingStation"));
         }
     }
 
     @ReceiveEvent
     public void craftingStationUpgraded(CraftingStationUpgraded craftingStationUpgraded, EntityRef character) {
-        if (craftingStationUpgraded.getCraftingStation().getComponent(CraftingStationComponent.class).type.equalsIgnoreCase("WoodCrafting:StandardWoodcrafting")) {
+        String type = craftingStationUpgraded.getCraftingStation().getComponent(CraftingStationComponent.class).type;
+        if (type.equalsIgnoreCase("WoodCrafting:StandardWoodCraftingStation")) {
             character.send(new DiscoveredNewJournalEntry(wasChapterId, "WoodCraftingStationUpgraded"));
         }
     }
@@ -235,7 +236,6 @@ public class WoodCraftingJournalIntegration extends BaseComponentSystem {
     @ReceiveEvent
     public void playerPickedUpItem(InventorySlotChangedEvent event, EntityRef character,
                                    CharacterComponent characterComponent) {
-        logger.info("item pick up");
         CraftingStationToolComponent toolComponent = event.getNewItem().getComponent(CraftingStationToolComponent.class);
         CraftingStationIngredientComponent ingredientComponent = event.getNewItem().getComponent(CraftingStationIngredientComponent.class);
         CraftInHandIngredientComponent craftInHandIngredientComponent = event.getNewItem().getComponent(CraftInHandIngredientComponent.class);
@@ -247,7 +247,6 @@ public class WoodCraftingJournalIntegration extends BaseComponentSystem {
         }
         if (ingredientComponent != null) {
             String ingredientType = ingredientComponent.type;
-            logger.info("ingredienttype: " + ingredientType);
             if (ingredientType.equalsIgnoreCase("WoodCrafting:wood")) {
                 character.send(new DiscoveredNewJournalEntry(wasChapterId, "Logs"));
             }
