@@ -106,10 +106,10 @@ public class WoodCraftingJournalIntegration extends BaseComponentSystem {
         chapterHandler.registerJournalEntry("ToolStone",
                 Arrays.asList(
                         createSubTitleParagraph("Tool Stone"),
-                        createTextParagraph("Now that I have stones, I can use two stones to make a Tool Stone which will allow me to build other equipment like axe " +
+                        createTextParagraph("Now that I have stones, I can use two stones to make a Tool Stone which will allow me to build other equipment like an axe " +
                                 "(press N to open crafting window)."),
                         new ImageParagraph(new Prefab[]{toolStoneItem}, null),
-                        createTextParagraph("By using the Tool Stone on another stone I should be able to make an Axe-Hammer Head by using the tool stone on another stone"),
+                        createTextParagraph("By using the Tool Stone on another stone I should be able to make an Axe-Hammer Head."),
                         new RecipeParagraph(new Block[2], new Prefab[]{toolStoneItem, stoneItem}, null, axeHammerHeadItem, 1)
                 ));
 
@@ -126,7 +126,7 @@ public class WoodCraftingJournalIntegration extends BaseComponentSystem {
         chapterHandler.registerJournalEntry("AxeHammerReceived",
                 Arrays.asList(
                         createSubTitleParagraph("Axe-Hammer Created"),
-                        createTextParagraph(("Excellent! I got the Axe-Hammer, I should be able to cut some of the trees with it. " +
+                        createTextParagraph(("Excellent! I got the Axe-Hammer. I should be able to cut some of the trees with it. " +
                         "I can also use it to dig stone to get some more Stones for my crafting. It's not perfect but will have to do until I get my hands on a " +
                         "better hammer or a pick."))
                 ));
@@ -134,8 +134,8 @@ public class WoodCraftingJournalIntegration extends BaseComponentSystem {
         chapterHandler.registerJournalEntry("Logs",
                 Arrays.asList(
                         createSubTitleParagraph("Logs"),
-                        createTextParagraph(("These logs are big, there is no way I could handle them in my hands. " +
-                        "I have to build a place where I could work on them. I should place two of the logs on the ground next to each other " +
+                        createTextParagraph(("These logs are big, there is no way I can handle them with my hands. " +
+                        "I have to build a place where I can work on them. I should place two of the logs on the ground next to each other " +
                         "and then place my Axe on it (right-click your Axe-Hammer on the top face of one of the logs)."))
                 ));
 
@@ -143,9 +143,9 @@ public class WoodCraftingJournalIntegration extends BaseComponentSystem {
                 Arrays.asList(
                         createSubTitleParagraph("Basic Wood Crafting Station"),
                         createTextParagraph(("Now I can work on the logs (to open the interface, press 'E' while pointing " +
-                        "on the station).<l><l>I can store some ingredients in the left-top corner of the station and my axe in the bottom-center " +
+                        "on the station).<l><l>I can store some ingredients in the top-left corner of the station and my axe in the bottom-center " +
                         "of the station. It's very crude and won't let me do much, but once I gather 10 Wood Planks I should be able to upgrade it. " +
-                        "(to upgrade place the ingredients into lower-left corner of the interface and press the 'Upgrade' button)"))
+                        "(to upgrade place the ingredients into bottom-left corner of the interface and press the 'Upgrade' button)"))
                 ));
 
         chapterHandler.registerJournalEntry("WoodCraftingStationUpgraded",
