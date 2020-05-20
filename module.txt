@@ -5,9 +5,12 @@
     "displayName": "Wood and Stone - Crafting Journal",
     "description": "This library module integrates a crafting journal with Wood and Stone",
     "dependencies": [
+        { "id": "Inventory", "minVersion": "1.1.0" },
         { "id": "Journal", "minVersion": "1.0.0" },
+        { "id": "MultiBlock", "minVersion": "1.1.0" },
         { "id": "StoneCrafting", "minVersion": "1.0.2" },
-        { "id": "WoodCrafting", "minVersion": "1.0.3" }
+        { "id": "WoodCrafting", "minVersion": "1.0.3" },
+        { "id": "WorkstationCrafting", "minVersion": "1.0.0" }
     ],
     "serverSideOnly": false,
     "isLibrary": true
